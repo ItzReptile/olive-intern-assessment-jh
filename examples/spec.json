@@ -1,0 +1,152 @@
+{
+  "title": "Which Japan Region Matches Your Interests?",
+  "results": [
+    {
+      "cta": {
+        "url": "/",
+        "text": "Explore Kyoto and Kansai"
+      },
+      "range": [
+        0,
+        6
+      ],
+      "title": "Kyoto and Kansai Region",
+      "description": "You are drawn to the heart of traditional Japan. Kyoto's thousands of temples, geisha districts, and preserved Edo-period townscapes align perfectly with your passion for historical depth and cultural authenticity. The broader Kansai region offers access to Nara's ancient Buddhist heritage and Osaka's vibrant local food scene."
+    },
+    {
+      "cta": {
+        "url": "/",
+        "text": "Discover Western Honshu"
+      },
+      "range": [
+        7,
+        13
+      ],
+      "title": "Hiroshima, Okayama, and Western Honshu",
+      "description": "Your interests reflect a balance between history and natural beauty. This region offers profound historical sites alongside stunning mountain temples, traditional garden arts, and the scenic Seto Inland Sea. You'll find deep cultural experiences without the overwhelming crowds of central tourist zones."
+    },
+    {
+      "cta": {
+        "url": "/",
+        "text": "Explore the Japanese Alps"
+      },
+      "range": [
+        14,
+        20
+      ],
+      "title": "Takayama and the Japanese Alps",
+      "description": "You're drawn to where tradition meets pristine nature. The mountain villages of the Takayama region preserve Edo-period merchant houses and offer authentic rural culture alongside spectacular seasonal landscapes. This is ideal for travelers seeking solitude and deep cultural immersion away from urban centers."
+    },
+    {
+      "cta": {
+        "url": "/",
+        "text": "Discover Tokyo and Yokohama"
+      },
+      "range": [
+        21,
+        27
+      ],
+      "title": "Tokyo and Yokohama Metropolis",
+      "description": "Your interests lean toward contemporary Japanese culture and modern heritage. Tokyo's museums, innovative neighborhoods, and blend of ultra-modern and traditional elements suit explorers who value cultural dynamism and cutting-edge creative scenes alongside selective historical sites."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "weight": 2,
+      "options": [
+        {
+          "id": "a",
+          "text": "Edo Period samurai culture and feudal traditions",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": "Meiji and modern industrialization",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "text": "Ancient Buddhist and imperial times",
+          "score": 0
+        },
+        {
+          "id": "d",
+          "text": "Post-war contemporary culture",
+          "score": 3
+        }
+      ],
+      "question": "What era of Japanese history fascinates you most?"
+    },
+    {
+      "id": "q2",
+      "type": "yes-no",
+      "weight": 2,
+      "no_score": 2,
+      "question": "Do you prioritize visiting famous historical temples and shrines?",
+      "yes_score": 0
+    },
+    {
+      "id": "q3",
+      "type": "scale",
+      "invert": true,
+      "weight": 1,
+      "question": "How important is experiencing traditional cuisine and local food culture to you?",
+      "max_label": "Extremely important",
+      "min_label": "Not important at all"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "weight": 2,
+      "options": [
+        {
+          "id": "a",
+          "text": "Witnessing geisha performances and traditional arts",
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": "Exploring mountain monasteries and spiritual sites",
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": "Experiencing rural countryside and agricultural heritage",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "text": "Discovering urban neighborhoods and modern creative scenes",
+          "score": 3
+        }
+      ],
+      "question": "Which cultural experience appeals to you most?"
+    },
+    {
+      "id": "q5",
+      "type": "scale",
+      "invert": true,
+      "weight": 1,
+      "question": "How drawn are you to natural landscapes and seasonal beauty?",
+      "max_label": "Very much",
+      "min_label": "Not at all"
+    },
+    {
+      "id": "q6",
+      "type": "yes-no",
+      "weight": 1,
+      "no_score": 1,
+      "question": "Do you speak or actively study Japanese language and culture?",
+      "yes_score": 0
+    },
+    {
+      "id": "q7",
+      "type": "free-text",
+      "weight": 1,
+      "question": "What is one specific historical or cultural aspect of Japan you'd most like to experience or learn about during a visit?"
+    }
+  ],
+  "description": "Discover which region of Japan aligns best with your passions for history, culture, and heritage. Based on your interests and travel priorities, we'll match you to the Japanese region that feels like home."
+}
