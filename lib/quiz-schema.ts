@@ -239,6 +239,14 @@ export function computeRanges(llm: LLMQuizSpec): z.infer<typeof QuizSpecShape> {
     return { ...r, range: [start, end] as [number, number] }
   })
 
-  return { ...llm, results }
+  // LLMQuizSchema types free-text weight as `number`, but QuizSpecShape pins
+  // it to the literal 1 (weight doesn't affect scoring for free-text). Coerce
+  // here so the output satisfies the stored schema and the later Zod parse
+  // won't trip on a legitimate case.
+  const questions = llm.questions.map((q) =>
+    q.type === "free-text" ? { ...q, weight: 1 as const } : q
+  )
+
+  return { ...llm, questions, results }
 }
 

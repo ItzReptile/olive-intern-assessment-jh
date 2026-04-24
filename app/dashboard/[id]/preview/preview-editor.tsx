@@ -689,9 +689,11 @@ function QuestionCard({
         )}
       </div>
 
-      {/* Weight + scale invert, each with breathing room. */}
+      {/* Weight + scale invert, each with breathing room. Free-text's weight
+          is fixed at 1 by the schema (it doesn't contribute to scoring) so
+          we don't offer an editable control for it. */}
       <div className="mb-4 flex gap-3 items-center flex-wrap">
-        {editable ? (
+        {editable && q.type !== "free-text" ? (
           <NumberInline
             label="weight"
             value={q.weight}
