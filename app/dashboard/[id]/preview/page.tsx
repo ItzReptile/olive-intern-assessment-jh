@@ -3,8 +3,10 @@ import { notFound } from "next/navigation"
 import { createClient } from "@supabase/supabase-js"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { MicroLabel, MonoURL } from "@/components/ui/typography"
+import { MicroLabel } from "@/components/ui/typography"
 import { Nav } from "@/components/nav"
+import { OwnerGate } from "@/components/owner-gate"
+import { ShareButton } from "@/components/share-button"
 import { PreviewEditor, type QuizRow } from "./preview-editor"
 
 export const dynamic = "force-dynamic"
@@ -13,15 +15,6 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.SUPABASE_SERVICE_ROLE_KEY!
 )
-
-function slug(id: string, title: string) {
-  const clean = (title || "quiz")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")
-    .slice(0, 16)
-  return `${clean}-${id.slice(0, 4)}`
-}
 
 export default async function SpecPreview({
   params,
@@ -37,9 +30,9 @@ export default async function SpecPreview({
 
   if (error || !data) return notFound()
   const quiz = data as QuizRow
-  const s = slug(quiz.id, quiz.title)
 
   return (
+    <OwnerGate quizId={quiz.id}>
     <main className="min-h-screen flex flex-col">
       <Nav active="dashboard" className="hidden md:flex" />
       <Nav active="dashboard" mobile className="flex md:hidden" />
@@ -62,7 +55,9 @@ export default async function SpecPreview({
               <p className="text-[14.5px] text-[var(--muted-fg)] leading-[1.55] mt-2 mb-0 max-w-[600px]">
                 {quiz.description}
               </p>
-              <MonoURL className="block mt-3">textoquiz.app/q/{s}</MonoURL>
+              <div className="mt-3">
+                <ShareButton id={quiz.id} />
+              </div>
             </div>
             <div className="flex gap-2">
               <Link href={`/quiz/${quiz.id}`}>
@@ -85,5 +80,6 @@ export default async function SpecPreview({
         </div>
       </section>
     </main>
+    </OwnerGate>
   )
 }

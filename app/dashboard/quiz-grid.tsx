@@ -31,15 +31,6 @@ const VIEW_OPTIONS: { value: View; label: string }[] = [
   { value: "list", label: "List" },
 ]
 
-function slug(id: string, title: string) {
-  const clean = (title || "quiz")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")
-    .slice(0, 16)
-  return `${clean}-${id.slice(0, 4)}`
-}
-
 function relTime(iso: string | null | undefined) {
   if (!iso) return "—"
   const d = new Date(iso).getTime()
@@ -89,7 +80,7 @@ export function QuizGrid({ quizzes }: { quizzes: QuizRowLite[] }) {
   return (
     <>
       <div className="flex justify-between items-center mt-10 mb-4">
-        <MicroLabel>All quizzes · {quizzes.length}</MicroLabel>
+        <MicroLabel>Your quizzes · {quizzes.length}</MicroLabel>
         <div className="hidden md:flex gap-[18px] items-center">
           <Dropdown
             label="Sort"
@@ -199,7 +190,6 @@ const QuizTile = memo(function QuizTile({
   const started = q.responses?.length ?? 0
   const completed = q.responses?.filter((r) => r.completed_at).length ?? 0
   const rate = started ? Math.round((completed / started) * 100) : 0
-  const s = slug(q.id, q.title)
   const lastUpdated =
     q.responses?.[0]?.completed_at ?? q.responses?.[0]?.started_at ?? q.created_at
 
@@ -213,7 +203,7 @@ const QuizTile = memo(function QuizTile({
                 {q.title}
               </div>
               <MonoURL className="block mt-[2px] !text-[11px]">
-                textoquiz.app/q/{s}
+                Updated {relTime(lastUpdated)}
               </MonoURL>
             </div>
             <div className="hidden sm:flex items-center gap-5 text-[13px] text-[var(--muted-fg)]">
@@ -238,7 +228,7 @@ const QuizTile = memo(function QuizTile({
             <div className="font-serif text-[19px] md:text-[22px] tracking-[-0.015em] leading-[1.15] text-[var(--foreground)] truncate">
               {q.title}
             </div>
-            <MonoURL className="block mt-1">textoquiz.app/q/{s}</MonoURL>
+            <MonoURL className="block mt-1">Updated {relTime(lastUpdated)}</MonoURL>
           </div>
           <RateBadge value={rate} />
         </div>

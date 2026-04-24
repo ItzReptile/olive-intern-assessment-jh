@@ -7,10 +7,11 @@ import { Pill } from "@/components/ui/pill"
 import { MicroLabel, MonoURL, Stat } from "@/components/ui/typography"
 import { Nav } from "@/components/nav"
 import type { QuizSpec } from "@/lib/quiz-schema"
-import { CopyLink } from "./copy-link"
 import { DeleteQuizButton } from "./delete-button"
 import { RangeFilter } from "@/components/range-filter"
 import { parseRangeFromSearch, inWindow } from "@/lib/range"
+import { OwnerGate } from "@/components/owner-gate"
+import { ShareButton } from "@/components/share-button"
 
 export const dynamic = "force-dynamic"
 
@@ -190,6 +191,7 @@ export default async function DrillDown({
   const dropOffLabel = `Q${dropOffQ}`
 
   return (
+    <OwnerGate quizId={quiz.id}>
     <main className="min-h-screen flex flex-col">
       <Nav active="dashboard" className="hidden md:flex" />
       <Nav active="dashboard" mobile className="flex md:hidden" />
@@ -209,8 +211,7 @@ export default async function DrillDown({
                 {renderTitle(quiz.title)}
               </h1>
               <div className="mt-[10px] flex gap-3 items-center flex-wrap">
-                <MonoURL>textoquiz.app/q/{quizSlug}</MonoURL>
-                <span className="text-[var(--faint)]">·</span>
+                <ShareButton id={quiz.id} />
                 <Pill variant={completions > 0 ? "olive" : "default"} className="!text-[11.5px] !py-[3px] !px-[9px]">
                   {completions > 0 ? "Published" : "Draft"}
                 </Pill>
@@ -227,7 +228,6 @@ export default async function DrillDown({
                   Take as user
                 </Button>
               </Link>
-              <CopyLink url={`/quiz/${quiz.id}`} />
               <DeleteQuizButton quizId={quiz.id} title={quiz.title} />
             </div>
           </div>
@@ -369,6 +369,7 @@ export default async function DrillDown({
         </div>
       </section>
     </main>
+    </OwnerGate>
   )
 }
 
