@@ -1,0 +1,160 @@
+{
+  "title": "What's Your Habit Style?",
+  "results": [
+    {
+      "cta": {
+        "url": "/",
+        "text": "Learn more about habit stacking"
+      },
+      "range": [
+        0,
+        11
+      ],
+      "title": "Routine Builder",
+      "description": "You thrive on structure and consistency. Habits feel natural when they're woven into your daily fabric, and you maintain them by keeping them on autopilot. Your strength is reliability; your challenge is flexibility when life disrupts your rhythm. Embrace routines but also build in small windows of grace for inevitable change."
+    },
+    {
+      "cta": {
+        "url": "/",
+        "text": "Explore healthy accountability systems"
+      },
+      "range": [
+        12,
+        23
+      ],
+      "title": "Streak Chaser",
+      "description": "You're motivated by progress and visible wins. Streaks, counts, and the fear of breaking them keep you accountable and moving forward. You excel at momentum-building but may occasionally sacrifice rest or adaptation for the sake of the streak. Give yourself permission to reset without shame when needed."
+    },
+    {
+      "cta": {
+        "url": "/",
+        "text": "Discover flexible habit frameworks"
+      },
+      "range": [
+        24,
+        35
+      ],
+      "title": "Freewheeler",
+      "description": "You prefer flexibility and intuition over rigid commitment. You're adaptive and spontaneous, which helps you avoid burnout, but consistency can feel constraining. Your success comes from making habits optional and enjoyable rather than mandatory. Try low-pressure, interest-based approaches instead of willpower-heavy ones."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "weight": 1,
+      "options": [
+        {
+          "id": "a",
+          "text": "Same routine every day—same time, same steps",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": "I have a routine but occasionally shake it up",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "text": "Depends on how I feel that day",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": "No consistent pattern",
+          "score": 4
+        }
+      ],
+      "question": "How do you typically start your morning?"
+    },
+    {
+      "id": "q2",
+      "type": "scale",
+      "invert": false,
+      "weight": 2,
+      "question": "How important is it for you to maintain a visible streak of consecutive days doing something?",
+      "max_label": "Extremely important",
+      "min_label": "Not important at all"
+    },
+    {
+      "id": "q3",
+      "type": "yes-no",
+      "weight": 2,
+      "no_score": 1,
+      "question": "Do you feel stressed or anxious when you break a habit or skip a day?",
+      "yes_score": 2
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "weight": 2,
+      "options": [
+        {
+          "id": "a",
+          "text": "Very little derails me once I commit",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": "Travel, schedule changes, or unexpected events",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "text": "Boredom or loss of motivation",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": "I don't really plan that far ahead",
+          "score": 4
+        }
+      ],
+      "question": "What's most likely to derail your consistency?"
+    },
+    {
+      "id": "q5",
+      "type": "scale",
+      "invert": false,
+      "weight": 1,
+      "question": "How much do you plan or structure your habits in advance?",
+      "max_label": "I plan every detail",
+      "min_label": "I wing it"
+    },
+    {
+      "id": "q6",
+      "type": "multiple-choice",
+      "weight": 1,
+      "options": [
+        {
+          "id": "a",
+          "text": "Build it into my daily routine so it's automatic",
+          "score": 1
+        },
+        {
+          "id": "b",
+          "text": "Track progress visually and celebrate milestones",
+          "score": 2
+        },
+        {
+          "id": "c",
+          "text": "Keep it loose and do it when it feels right",
+          "score": 3
+        },
+        {
+          "id": "d",
+          "text": "I rarely try to build habits deliberately",
+          "score": 4
+        }
+      ],
+      "question": "Your ideal way to build a habit is:"
+    },
+    {
+      "id": "q7",
+      "type": "free-text",
+      "weight": 1,
+      "question": "What habit have you successfully maintained for the longest, and what made it stick?"
+    }
+  ],
+  "description": "Discover whether you're a Routine Builder, Streak Chaser, or Freewheeler. Learn how you naturally approach consistency and what drives your habit formation."
+}

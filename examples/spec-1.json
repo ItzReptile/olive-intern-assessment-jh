@@ -1,0 +1,157 @@
+{
+  "title": "What's Your Money Archetype?",
+  "results": [
+    {
+      "cta": {
+        "url": "/",
+        "text": "Explore advanced wealth-building strategies"
+      },
+      "range": [
+        0,
+        10
+      ],
+      "title": "The Steward",
+      "description": "You have a healthy, balanced relationship with money. You save consistently, track your spending, and feel in control of your finances. You see money as a tool for both security and purpose, neither obsessing over it nor avoiding it. Your thoughtful approach positions you well for long-term financial stability."
+    },
+    {
+      "cta": {
+        "url": "/",
+        "text": "Learn about balanced wealth-building"
+      },
+      "range": [
+        11,
+        20
+      ],
+      "title": "The Mogul",
+      "description": "You're ambitious and goal-oriented when it comes to wealth. You track your finances closely and feel motivated by financial growth and achievement. While your drive is a strength, watch for the stress that can come with always pushing for more. Channel your energy into goals that align with your values."
+    },
+    {
+      "cta": {
+        "url": "/",
+        "text": "Create a simple financial foundation"
+      },
+      "range": [
+        21,
+        30
+      ],
+      "title": "The Monk",
+      "description": "You're not primarily motivated by money, and that's a valid choice. However, some financial structure can reduce stress and give you more freedom to pursue what truly matters. You don't need to become obsessed with wealth, but a basic plan can help you feel more secure."
+    },
+    {
+      "cta": {
+        "url": "/",
+        "text": "Start your financial reset"
+      },
+      "range": [
+        31,
+        40
+      ],
+      "title": "The Avoider",
+      "description": "You're struggling with financial stress because you're not engaging with your money. Avoidance often makes anxiety worse. The good news: taking even small steps — like tracking spending for one month or creating a basic budget — can dramatically reduce your stress and give you back a sense of control."
+    }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "weight": 2,
+      "options": [
+        {
+          "id": "a",
+          "text": "I save 20% or more consistently",
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": "I save 10-20% when I can",
+          "score": 1
+        },
+        {
+          "id": "c",
+          "text": "I save less than 10%",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "text": "I don't track savings; money just disappears",
+          "score": 4
+        },
+        {
+          "id": "e",
+          "text": "I actively avoid thinking about saving",
+          "score": 5
+        }
+      ],
+      "question": "How much of your monthly income do you typically save?"
+    },
+    {
+      "id": "q2",
+      "type": "yes-no",
+      "weight": 2,
+      "no_score": 4,
+      "question": "Do you regularly track your spending and review your budget?",
+      "yes_score": 0
+    },
+    {
+      "id": "q3",
+      "type": "scale",
+      "invert": false,
+      "weight": 2,
+      "question": "When you think about your finances, how stressed do you feel?",
+      "max_label": "Extremely stressed",
+      "min_label": "Not stressed at all"
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "weight": 1,
+      "options": [
+        {
+          "id": "a",
+          "text": "It's a tool to live responsibly and help others",
+          "score": 0
+        },
+        {
+          "id": "b",
+          "text": "I'd rather not think about it too much",
+          "score": 4
+        },
+        {
+          "id": "c",
+          "text": "Money is unnecessary for happiness; experiences matter more",
+          "score": 2
+        },
+        {
+          "id": "d",
+          "text": "Building wealth and success is a core goal",
+          "score": 1
+        }
+      ],
+      "question": "What's your primary attitude toward earning money?"
+    },
+    {
+      "id": "q5",
+      "type": "yes-no",
+      "weight": 1,
+      "no_score": 3,
+      "question": "Do you have a clear financial plan or set of money goals?",
+      "yes_score": 0
+    },
+    {
+      "id": "q6",
+      "type": "scale",
+      "invert": true,
+      "weight": 1,
+      "question": "How in control of your financial situation do you feel?",
+      "max_label": "Very much in control",
+      "min_label": "Completely out of control"
+    },
+    {
+      "id": "q7",
+      "type": "free-text",
+      "weight": 1,
+      "question": "What's one thing you wish were different about your relationship with money?"
+    }
+  ],
+  "description": "Discover your natural relationship with money and finances. This quiz reveals whether you're a Steward, Avoider, Monk, or Mogul — and what that means for your financial wellbeing."
+}
