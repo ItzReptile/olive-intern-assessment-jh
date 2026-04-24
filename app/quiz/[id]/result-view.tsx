@@ -17,15 +17,6 @@ export type ResultData = {
   cta: { text: string; url: string }
 }
 
-function slugFromId(id: string, title: string) {
-  const clean = (title || "quiz")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "")
-    .slice(0, 16)
-  return `${clean}-${id.slice(0, 4)}`
-}
-
 function formatAnswer(q: Question, raw: any): string {
   if (raw === undefined || raw === null || raw === "") return "— skipped —"
   if (q.type === "multiple-choice") {
@@ -59,11 +50,14 @@ export function ResultView({
   onRetake: () => void
   onCopy: () => void
 }) {
+  // Display the real path users can actually visit. We deliberately don't
+  // make up a vanity slug — the host is whatever this is deployed at,
+  // path is the real /quiz/{uuid} route, truncated for readability.
   const url = useMemo(() => {
-    const slug = slugFromId(quiz.id, quiz.title)
-    if (typeof window !== "undefined") return `${window.location.host}/q/${slug}`
-    return `textoquiz.app/q/${slug}`
-  }, [quiz.id, quiz.title])
+    const shortId = quiz.id.slice(0, 8)
+    const host = typeof window !== "undefined" ? window.location.host : ""
+    return host ? `${host}/quiz/${shortId}` : `/quiz/${shortId}`
+  }, [quiz.id])
 
   const titleSizeClass =
     result.title.length > 18
